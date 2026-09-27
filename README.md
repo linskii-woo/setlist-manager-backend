@@ -1,4 +1,4 @@
-# 🎼 Setlist Manager - Backend
+# Setlist Manager - Backend
 
 REST-API für den Setlist Manager. Verwaltet Songs in einer MongoDB Datenbank.
 
@@ -40,6 +40,14 @@ GET: /songs/:id -> ruft einen Song ab
 PATCH: /songs/:id -> aktualisiert Song 
 DELETE: /songs/:id -> löscht Song 
 
+## Song Datenmodell
+
+title: String -> Titel des Songs 
+artist: String -> Künstler 
+status: String -> New / In Progress / Ready 
+duration: String -> Dauer des Songs 
+notes: String -> Notizen zum Song 
+
 ## Verwendete KI-Werkzeuge
 
-- Claude (Anthropic): Hilfe beim Debugging
+- Claude (Anthropic): Hilfe beim Debugging, 
