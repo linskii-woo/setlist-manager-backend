@@ -13,7 +13,9 @@ router.post('/songs', async(req, res) => {
     const newSong = new Song({
         title: req.body.title,
         artist: req.body.artist,
-        status: req.body.status
+        status: req.body.status,
+        duration: req.body.duration,
+        note: req.body.note
     });
     await newSong.save();
     res.send(newSong);
@@ -38,6 +40,8 @@ router.patch('/songs/:id', async(req, res) => {
         if (req.body.title) song.title = req.body.title;
         if (req.body.artist) song.artist = req.body.artist;
         if (req.body.status) song.status = req.body.status;
+        if (req.body.duration) song.duration = req.body.duration;
+        if (req.body.note !== undefined) song.note = req.body.note;
         await Song.updateOne({ _id: req.params.id }, song);
         res.send(song);
     } catch {
